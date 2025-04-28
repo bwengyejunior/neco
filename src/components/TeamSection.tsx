@@ -6,13 +6,13 @@ const teamMembers = [
     name: "Bigira Kajura Johnny",
     position: "CEO & Founder",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop",
-    bio: "With 15+ years in tech leadership, Johnny drives our vision and strategy to deliver exceptional technology solutions.",
+    bio: "With 15+ years in tech leadership, Johnny drives our vision and strategy to deliver exceptional technology solutions in Uganda.",
   },
   {
-    name: "Amara Wilson",
+    name: "Bwengye Junior",
     position: "CTO",
-    image: "https://images.unsplash.com/photo-1539701938214-0d9736e1c16b?q=80&w=1374&auto=format&fit=crop",
-    bio: "Amara leads our technical innovations with expertise in cloud architecture and AI implementation.",
+    image: "https://images.unsplash.com/photo-1578496781379-7dcfb995293d?q=80&w=1374&auto=format&fit=crop",
+    bio: "Bwengye leads our technical innovations with expertise in cloud architecture and AI implementation across Uganda and East Africa.",
   },
   {
     name: "David Okafor",

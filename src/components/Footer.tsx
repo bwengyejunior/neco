@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="text-2xl font-bold font-heading">neco</span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-xs">
-              Empowering businesses through innovative technology solutions that drive growth and success.
+              Empowering businesses across Uganda through innovative technology solutions that drive growth and success.
             </p>
             <div className="flex space-x-4">
               <a
@@ -135,7 +135,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border pt-8 text-center md:flex md:justify-between md:text-left text-muted-foreground text-sm">
-          <p>&copy; {currentYear} neco Technologies. All rights reserved.</p>
+          <p>&copy; {currentYear} neco Technologies, Uganda. All rights reserved.</p>
           <p className="mt-2 md:mt-0">
             Designed with <span className="text-primary">❤</span> for innovation
           </p>
