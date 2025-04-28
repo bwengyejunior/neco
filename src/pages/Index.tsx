@@ -11,6 +11,7 @@ import ProcessSection from "@/components/ProcessSection";
 import CtaSection from "@/components/CtaSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   useEffect(() => {
@@ -54,6 +55,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 };

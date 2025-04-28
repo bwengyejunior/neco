@@ -36,11 +36,14 @@ const AboutSection = () => {
                 : "opacity-0 -translate-x-10"
             }`}
           >
-            <img
-              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1469&auto=format&fit=crop"
-              alt="neco workplace"
-              className="rounded-lg shadow-lg w-full h-auto"
-            />
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-blue-400/20 rounded-lg blur-xl opacity-70"></div>
+              <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1469&auto=format&fit=crop"
+                alt="neco workplace"
+                className="rounded-lg shadow-lg w-full h-auto relative z-10"
+              />
+            </div>
           </div>
 
           <div
@@ -50,14 +53,14 @@ const AboutSection = () => {
                 : "opacity-0 translate-x-10"
             }`}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Who We Are</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text inline-block">Who We Are</h2>
             <p className="text-lg text-muted-foreground mb-6">
               At neco Technologies, we specialize in delivering tailored technology solutions that drive business success. With a team of experienced IT consultants, software engineers, and cloud specialists, we help companies embrace digital transformation with confidence.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
               Founded on the principle of innovation with purpose, we combine technical expertise with business acumen to create solutions that not only solve today's problems but prepare your organization for future growth.
             </p>
-            <a href="#contact" className="btn-primary">
+            <a href="#contact" className="btn-primary bounce-effect">
               Learn More About Us
             </a>
           </div>

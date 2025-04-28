@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-background/90 backdrop-blur-md shadow-sm"
+          ? "py-3 backdrop-blur-md shadow-lg rounded-b-2xl mx-4 mt-0 bg-background/80"
           : "py-5 bg-transparent"
       }`}
     >
@@ -56,7 +56,7 @@ const Navbar = () => {
             Contact
           </a>
           <ThemeToggle />
-          <a href="#contact" className="btn-primary">
+          <a href="#contact" className="btn-primary transform hover:scale-105 transition-transform duration-300">
             Get Started
           </a>
         </div>
@@ -66,7 +66,7 @@ const Navbar = () => {
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 focus:outline-none"
+            className="p-2 focus:outline-none hover:bg-muted/50 rounded-full transition-colors duration-300"
           >
             {isOpen ? (
               <X className="h-6 w-6" />
@@ -79,7 +79,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden absolute w-full bg-background shadow-md transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute w-full bg-background/95 backdrop-blur-md shadow-lg transition-all duration-300 ease-in-out rounded-b-2xl ${
           isOpen ? "max-h-80 py-4" : "max-h-0 overflow-hidden"
         }`}
       >

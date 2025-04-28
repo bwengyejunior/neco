@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     // Check if user has theme preference stored
@@ -18,6 +19,9 @@ const ThemeToggle = () => {
   }, []);
 
   const toggleTheme = () => {
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 500);
+    
     if (theme === "light") {
       setTheme("dark");
       localStorage.setItem("theme", "dark");
@@ -32,14 +36,19 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full hover:bg-muted transition-colors"
+      className="p-2 rounded-full hover:bg-muted transition-all duration-300 relative overflow-hidden"
       aria-label="Toggle theme"
     >
-      {theme === "light" ? (
-        <Moon className="h-5 w-5" />
-      ) : (
-        <Sun className="h-5 w-5" />
-      )}
+      <div className={`transform transition-all duration-500 ${isAnimating ? 'scale-0' : 'scale-100'}`}>
+        {theme === "light" ? (
+          <Moon className="h-5 w-5" />
+        ) : (
+          <Sun className="h-5 w-5" />
+        )}
+      </div>
+      <div 
+        className={`absolute inset-0 bg-primary/10 rounded-full transform transition-transform duration-500 ${isAnimating ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
+      ></div>
     </button>
   );
 };

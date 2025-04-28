@@ -45,10 +45,10 @@ const FeaturesSection = () => {
   }, []);
 
   return (
-    <section className="section-spacing bg-secondary/30" ref={sectionRef}>
+    <section className="section-spacing bg-gradient-to-b from-secondary/30 to-background" ref={sectionRef}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text inline-block">
             Why Choose neco
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -56,19 +56,13 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 staggered-animation">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`text-center ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
+              className="text-center glass-card p-6 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               style={{
-                transitionProperty: "all",
-                transitionDuration: "700ms",
-                transitionDelay: `${index * 150}ms`,
+                animationDelay: `${index * 150}ms`,
               }}
             >
               <div className="feature-icon mx-auto">

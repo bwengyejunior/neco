@@ -83,10 +83,10 @@
     @apply px-4 md:px-6 lg:px-8;
   }
   .btn-primary {
-    @apply inline-flex h-11 items-center justify-center rounded-lg bg-primary px-8 py-3 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex h-11 items-center justify-center rounded-lg bg-gradient-to-r from-primary to-blue-400 px-8 py-3 text-sm font-medium text-primary-foreground ring-offset-background transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-secondary {
-    @apply inline-flex h-11 items-center justify-center rounded-lg border border-input bg-background px-8 py-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex h-11 items-center justify-center rounded-lg border border-input bg-background px-8 py-3 text-sm font-medium ring-offset-background transition-all duration-300 hover:bg-accent hover:text-accent-foreground hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
   .section-spacing {
     @apply py-16 md:py-24 lg:py-32;
@@ -106,7 +106,7 @@
   .navbar-link {
     @apply relative text-foreground hover:text-primary transition-colors duration-200 font-medium;
     &::after {
-      @apply content-[''] absolute left-0 bottom-[-2px] w-0 h-[2px] bg-primary transition-all duration-300;
+      @apply content-[''] absolute left-0 bottom-[-2px] w-0 h-[2px] bg-gradient-to-r from-primary to-blue-400 transition-all duration-300;
     }
     &:hover::after {
       @apply w-full;
@@ -114,18 +114,136 @@
   }
   
   .service-card {
-    @apply bg-background rounded-lg p-6 shadow-md border border-border transition-all duration-300 hover:shadow-lg hover:border-primary/30;
+    @apply bg-gradient-to-br from-background to-secondary/30 rounded-lg p-6 shadow-md border border-border transition-all duration-300 hover:shadow-lg hover:border-primary/30 backdrop-blur-sm;
   }
   
   .testimonial-card {
-    @apply bg-background rounded-lg p-6 shadow-md border border-border;
+    @apply bg-gradient-to-br from-background to-secondary/30 rounded-lg p-6 shadow-md border border-border backdrop-blur-sm;
   }
   
   .feature-icon {
-    @apply flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4;
+    @apply flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-blue-400/20 text-primary mb-4 transition-transform duration-300 hover:scale-110;
   }
   
   .social-icon {
     @apply text-muted-foreground hover:text-primary transition-colors duration-200;
   }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary to-blue-400;
+  }
+
+  .glass-card {
+    @apply bg-background/80 backdrop-blur-md rounded-lg border border-primary/10 shadow-lg;
+  }
+
+  .bounce-effect {
+    @apply transition-transform hover:translate-y-[-5px] duration-300;
+  }
+
+  .pulse-animation {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .chatbot-container {
+    @apply fixed bottom-6 right-6 z-50;
+  }
+
+  .chatbot-button {
+    @apply w-14 h-14 rounded-full bg-gradient-to-r from-primary to-blue-400 flex items-center justify-center shadow-lg cursor-pointer transition-transform duration-300 hover:scale-110;
+  }
+
+  .chatbot-panel {
+    @apply absolute bottom-16 right-0 w-80 md:w-96 bg-background/95 backdrop-blur-md rounded-lg shadow-xl border border-border overflow-hidden transition-all duration-300;
+  }
+
+  .chatbot-header {
+    @apply p-4 bg-gradient-to-r from-primary to-blue-400 text-white font-medium flex items-center justify-between;
+  }
+
+  .chatbot-messages {
+    @apply p-4 h-80 overflow-y-auto flex flex-col space-y-4;
+  }
+
+  .chatbot-message {
+    @apply p-3 rounded-lg max-w-[80%];
+  }
+
+  .chatbot-user-message {
+    @apply bg-primary/10 self-end;
+  }
+
+  .chatbot-bot-message {
+    @apply bg-muted self-start;
+  }
+
+  .chatbot-input {
+    @apply p-4 border-t border-border flex items-center gap-2;
+  }
+}
+
+/* Additional animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease forwards;
+}
+
+.staggered-animation > * {
+  opacity: 0;
+}
+
+.staggered-animation > *:nth-child(1) {
+  animation: fadeIn 0.5s 0.1s forwards;
+}
+
+.staggered-animation > *:nth-child(2) {
+  animation: fadeIn 0.5s 0.2s forwards;
+}
+
+.staggered-animation > *:nth-child(3) {
+  animation: fadeIn 0.5s 0.3s forwards;
+}
+
+.staggered-animation > *:nth-child(4) {
+  animation: fadeIn 0.5s 0.4s forwards;
+}
+
+.staggered-animation > *:nth-child(5) {
+  animation: fadeIn 0.5s 0.5s forwards;
 }
