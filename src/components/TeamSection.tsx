@@ -1,23 +1,24 @@
 
 import { useEffect, useRef, useState } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const teamMembers = [
   {
     name: "Bigira Kajura Johnny",
     position: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop",
+    image: "/lovable-uploads/b15b3809-3f2d-4d91-81f0-9c7e7aa86e71.png",
     bio: "With 15+ years in tech leadership, Johnny drives our vision and strategy to deliver exceptional technology solutions in Uganda.",
   },
   {
     name: "Bwengye Junior",
     position: "CTO",
-    image: "https://images.unsplash.com/photo-1578496781379-7dcfb995293d?q=80&w=1374&auto=format&fit=crop",
+    image: "/lovable-uploads/5538eba1-0b55-4fe0-b4df-aa4b5664b549.png",
     bio: "Bwengye leads our technical innovations with expertise in cloud architecture and AI implementation across Uganda and East Africa.",
   },
   {
     name: "David Okafor",
     position: "Head of Operations",
-    image: "https://images.unsplash.com/photo-1578496781379-7dcfb995293d?q=80&w=1374&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=1374&auto=format&fit=crop",
     bio: "David ensures our processes deliver exceptional results for every client through operational excellence.",
   },
 ];
@@ -54,7 +55,7 @@ const TeamSection = () => {
             Meet Our Team
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Passionate experts committed to delivering exceptional technology solutions.
+            Passionate experts committed to delivering exceptional technology solutions in Uganda.
           </p>
         </div>
 
@@ -85,8 +86,16 @@ const TeamSection = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                <p className="text-primary mb-3">{member.position}</p>
+                <div className="flex items-center gap-4 mb-3">
+                  <Avatar className="h-10 w-10 border-2 border-primary">
+                    <AvatarImage src={member.image} alt={member.name} />
+                    <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                    <p className="text-primary">{member.position}</p>
+                  </div>
+                </div>
                 <p className="text-muted-foreground">{member.bio}</p>
               </div>
             </div>
