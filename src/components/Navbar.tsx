@@ -33,9 +33,16 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold font-heading text-foreground">
-            neco
-          </span>
+          <div className="relative">
+            <img 
+              src="/lovable-uploads/15c6c62d-33fe-47ff-8a05-1f0ce1b7d135.png" 
+              alt="neco logo" 
+              className="h-8 w-8 mr-2 filter dark:brightness-100 brightness-90" 
+            />
+            <span className="text-2xl font-bold font-heading text-foreground absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              neco
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

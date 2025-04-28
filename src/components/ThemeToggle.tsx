@@ -9,7 +9,17 @@ const ThemeToggle = () => {
   useEffect(() => {
     // Check if user has theme preference stored
     const savedTheme = localStorage.getItem("theme");
+    // Check system preference
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
     if (savedTheme === "dark") {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+    } else if (savedTheme === "light") {
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+    } else if (systemPrefersDark) {
+      // Use system preference if no saved preference
       setTheme("dark");
       document.documentElement.classList.add("dark");
     } else {
@@ -36,14 +46,14 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full hover:bg-muted transition-all duration-300 relative overflow-hidden"
+      className="p-2 rounded-full hover:bg-primary/10 transition-all duration-300 relative overflow-hidden shadow-md"
       aria-label="Toggle theme"
     >
       <div className={`transform transition-all duration-500 ${isAnimating ? 'scale-0' : 'scale-100'}`}>
         {theme === "light" ? (
-          <Moon className="h-5 w-5" />
+          <Moon className="h-5 w-5 text-primary" />
         ) : (
-          <Sun className="h-5 w-5" />
+          <Sun className="h-5 w-5 text-primary" />
         )}
       </div>
       <div 

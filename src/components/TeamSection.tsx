@@ -3,22 +3,22 @@ import { useEffect, useRef, useState } from "react";
 
 const teamMembers = [
   {
-    name: "Anika Johnson",
+    name: "Bigira Kajura Johnny",
     position: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1376&auto=format&fit=crop",
-    bio: "With 15+ years in tech leadership, Anika drives our vision and strategy.",
-  },
-  {
-    name: "Marcus Chen",
-    position: "CTO",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop",
-    bio: "Marcus leads our technical innovations with expertise in cloud architecture and AI.",
+    bio: "With 15+ years in tech leadership, Johnny drives our vision and strategy to deliver exceptional technology solutions.",
   },
   {
-    name: "Leila Washington",
+    name: "Amara Wilson",
+    position: "CTO",
+    image: "https://images.unsplash.com/photo-1539701938214-0d9736e1c16b?q=80&w=1374&auto=format&fit=crop",
+    bio: "Amara leads our technical innovations with expertise in cloud architecture and AI implementation.",
+  },
+  {
+    name: "David Okafor",
     position: "Head of Operations",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1461&auto=format&fit=crop",
-    bio: "Leila ensures our processes deliver exceptional results for every client.",
+    image: "https://images.unsplash.com/photo-1578496781379-7dcfb995293d?q=80&w=1374&auto=format&fit=crop",
+    bio: "David ensures our processes deliver exceptional results for every client through operational excellence.",
   },
 ];
 
@@ -47,10 +47,10 @@ const TeamSection = () => {
   }, []);
 
   return (
-    <section className="section-spacing bg-secondary/30" ref={sectionRef}>
+    <section className="section-spacing bg-gradient-to-br from-secondary/30 to-background" ref={sectionRef}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
             Meet Our Team
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -62,7 +62,7 @@ const TeamSection = () => {
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className={`bg-background rounded-lg overflow-hidden shadow-md border border-border transition-all duration-500 ${
+              className={`glass-card overflow-hidden transition-all duration-500 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
@@ -71,12 +71,18 @@ const TeamSection = () => {
                 transitionDelay: `${index * 150}ms`,
               }}
             >
-              <div className="aspect-w-1 aspect-h-1 relative">
+              <div className="aspect-w-1 aspect-h-1 relative overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-72 object-cover object-center"
+                  className="w-full h-72 object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 text-white">
+                    <h3 className="text-xl font-bold">{member.name}</h3>
+                    <p className="text-primary-foreground/90">{member.position}</p>
+                  </div>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
