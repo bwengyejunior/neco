@@ -15,6 +15,7 @@ const HeroSection = () => {
       
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text Content - Left Side */}
           <div
             className={`transition-all duration-1200 delay-100 ${
               isVisible
@@ -52,12 +53,13 @@ const HeroSection = () => {
             </div>
           </div>
           
+          {/* Image Content - Right Side */}
           <div
             className={`transition-all duration-1200 delay-300 ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-20"
-            }`}
+            } order-first lg:order-last`}
           >
             <div className="relative">
               {/* Enhanced animated glowing orbs */}
