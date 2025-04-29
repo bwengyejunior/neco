@@ -11,15 +11,9 @@ const teamMembers = [
   },
   {
     name: "Bwengye Junior",
-    position: "CTO",
+    position: "Co-Founder & CTO",
     image: "/lovable-uploads/5538eba1-0b55-4fe0-b4df-aa4b5664b549.png",
     bio: "Bwengye leads our technical innovations with expertise in cloud architecture and AI implementation across Uganda and East Africa.",
-  },
-  {
-    name: "David Okafor",
-    position: "Head of Operations",
-    image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?q=80&w=1374&auto=format&fit=crop",
-    bio: "David ensures our processes deliver exceptional results for every client through operational excellence.",
   },
 ];
 
@@ -59,7 +53,7 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}

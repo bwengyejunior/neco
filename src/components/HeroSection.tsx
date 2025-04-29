@@ -29,9 +29,9 @@ const HeroSection = () => {
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 relative">
                 <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent animate-gradient">
-                  Empowering Businesses
+                  Empowering Growth
                 </span>{" "}
-                Through Innovative Technology Solutions
+                with Smart Technology.
               </h1>
             </div>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
@@ -66,10 +66,10 @@ const HeroSection = () => {
               <div className="absolute -right-4 top-1/4 w-28 h-28 bg-blue-500/30 rounded-full blur-xl animate-pulse"></div>
               <div className="absolute right-1/3 -bottom-4 w-36 h-36 bg-primary/30 rounded-full blur-xl animate-pulse" style={{animationDuration: '5s'}}></div>
               
-              {/* Hero image */}
+              {/* Updated hero image */}
               <img
-                src="/lovable-uploads/5f18ac1d-2364-49b7-a622-30eedacec7b9.png"
-                alt="Professional in suit working on laptop"
+                src="/lovable-uploads/acb62f51-b626-441c-b1c6-7db834a545f1.png"
+                alt="Technology innovation concept"
                 className="w-full h-auto max-w-md mx-auto object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-700"
               />
             </div>
