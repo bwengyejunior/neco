@@ -14,14 +14,14 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none"></div>
       
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Text Content - Left Side */}
           <div
             className={`transition-all duration-1200 delay-100 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
-            }`}
+            } order-first`}
           >
             <div className="relative">
               {/* Enhanced decorative element */}
@@ -59,14 +59,14 @@ const HeroSection = () => {
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-20"
-            } order-first lg:order-last`}
+            } order-last`}
           >
             <div className="relative">
               {/* Enhanced animated glowing orbs */}
               <div className="absolute -right-4 top-1/4 w-28 h-28 bg-blue-500/30 rounded-full blur-xl animate-pulse"></div>
               <div className="absolute right-1/3 -bottom-4 w-36 h-36 bg-primary/30 rounded-full blur-xl animate-pulse" style={{animationDuration: '5s'}}></div>
               
-              {/* Updated hero image with the new image */}
+              {/* Hero image */}
               <img
                 src="/lovable-uploads/5f18ac1d-2364-49b7-a622-30eedacec7b9.png"
                 alt="Professional in suit working on laptop"
