@@ -15,17 +15,22 @@ import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   useEffect(() => {
-    // Intersection Observer for fade-in animations
+    // Enhanced Intersection Observer with more refined animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            // Add additional animation class based on data attribute
+            const animationType = entry.target.getAttribute("data-animation");
+            if (animationType) {
+              entry.target.classList.add(animationType);
+            }
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
     );
 
     const elements = document.querySelectorAll(".fade-in-on-scroll");
