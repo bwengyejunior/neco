@@ -10,24 +10,24 @@ const HeroSection = () => {
 
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden relative">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+      {/* Background gradient with enhanced effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none"></div>
       
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div
-            className={`transition-all duration-1000 delay-100 ${
+            className={`transition-all duration-1200 delay-100 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
           >
             <div className="relative">
-              {/* Decorative element */}
-              <div className="absolute -left-8 -top-8 w-20 h-20 bg-gradient-to-br from-primary/30 to-blue-400/30 rounded-full blur-xl"></div>
+              {/* Enhanced decorative element */}
+              <div className="absolute -left-8 -top-8 w-24 h-24 bg-gradient-to-br from-primary/40 to-blue-400/40 rounded-full blur-xl animate-pulse"></div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 relative">
-                <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent animate-gradient">
                   Empowering Businesses
                 </span>{" "}
                 Through Innovative Technology Solutions
@@ -53,22 +53,22 @@ const HeroSection = () => {
           </div>
           
           <div
-            className={`transition-all duration-1000 delay-300 ${
+            className={`transition-all duration-1200 delay-300 ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-20"
             }`}
           >
             <div className="relative">
-              {/* Animated glowing orbs */}
-              <div className="absolute -right-4 top-1/4 w-24 h-24 bg-blue-500/20 rounded-full blur-xl animate-pulse"></div>
-              <div className="absolute right-1/3 -bottom-4 w-32 h-32 bg-primary/20 rounded-full blur-xl animate-pulse" style={{animationDuration: '4s'}}></div>
+              {/* Enhanced animated glowing orbs */}
+              <div className="absolute -right-4 top-1/4 w-28 h-28 bg-blue-500/30 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute right-1/3 -bottom-4 w-36 h-36 bg-primary/30 rounded-full blur-xl animate-pulse" style={{animationDuration: '5s'}}></div>
               
-              {/* Hero image */}
+              {/* Updated hero image with the new image */}
               <img
-                src="/lovable-uploads/bce28cc1-a279-4775-9cc8-d839cfbdbf3d.png"
+                src="/lovable-uploads/5f18ac1d-2364-49b7-a622-30eedacec7b9.png"
                 alt="Professional in suit working on laptop"
-                className="w-full h-auto max-w-md mx-auto object-contain drop-shadow-2xl transform hover:scale-102 transition-transform duration-700"
+                className="w-full h-auto max-w-md mx-auto object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>

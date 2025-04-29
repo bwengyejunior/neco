@@ -54,10 +54,27 @@ const Index = () => {
       });
     });
 
+    // Add CSS for gradient animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes gradientFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      
+      .animate-gradient {
+        background-size: 200% auto;
+        animation: gradientFlow 3s ease-in-out infinite;
+      }
+    `;
+    document.head.appendChild(style);
+
     return () => {
       elements.forEach((element) => {
         observer.unobserve(element);
       });
+      document.head.removeChild(style);
     };
   }, []);
 

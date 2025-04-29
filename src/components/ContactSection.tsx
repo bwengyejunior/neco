@@ -1,3 +1,4 @@
+
 import { useState, FormEvent, useEffect, useRef } from "react";
 import { Check, Mail, MapPin, Phone } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
@@ -78,7 +79,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium">Phone</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+256 (704) 123-456</p>
                 </div>
               </div>
 
