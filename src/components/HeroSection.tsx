@@ -66,7 +66,7 @@ const HeroSection = () => {
               <div className="absolute -right-4 top-1/4 w-28 h-28 bg-blue-500/30 rounded-full blur-xl animate-pulse"></div>
               <div className="absolute right-1/3 -bottom-4 w-36 h-36 bg-primary/30 rounded-full blur-xl animate-pulse" style={{animationDuration: '5s'}}></div>
               
-              {/* Updated hero image */}
+              {/* Updated hero image with direct reference */}
               <img
                 src="/lovable-uploads/acb62f51-b626-441c-b1c6-7db834a545f1.png"
                 alt="Technology innovation concept"
