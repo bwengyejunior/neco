@@ -32,28 +32,53 @@ const ContactSection = () => {
     };
   }, []);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setName("");
-      setEmail("");
-      setMessage("");
+    
+    try {
+      // Create form data for email submission
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("message", message);
       
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+      // Using Email.js as a simple approach to send email directly from frontend
+      // In production, this would typically be handled by a backend service
+      const response = await fetch("https://formsubmit.co/necotechnologies@gmail.com", {
+        method: "POST",
+        body: formData,
       });
       
-      // Reset submission state after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
-    }, 1500);
+      if (response.ok) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+        
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        
+        // Reset submission state after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setIsSubmitting(false);
+      
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -114,7 +139,12 @@ const ContactSection = () => {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" action="https://formsubmit.co/necotechnologies@gmail.com" method="POST">
+              <input type="hidden" name="_next" value={window.location.href} />
+              <input type="hidden" name="_subject" value="New contact form submission from neco website" />
+              <input type="text" name="_honey" style={{ display: "none" }} />
+              <input type="hidden" name="_captcha" value="false" />
+              
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name
@@ -122,6 +152,7 @@ const ContactSection = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full px-4 py-3 border border-border rounded-lg bg-background"
@@ -137,6 +168,7 @@ const ContactSection = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-3 border border-border rounded-lg bg-background"
@@ -151,6 +183,7 @@ const ContactSection = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={5}
